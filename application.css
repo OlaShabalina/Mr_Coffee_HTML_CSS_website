@@ -1,0 +1,29 @@
+@font-face {
+    font-family: avenirNext;
+    src: url(Fonts/AvenirNextLTPro-Regular.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#full-logo {
+    text-align: center;
+}
+
+#full-logo img {
+    width: 10%;
+    position: relative;
+}
+
+#main-title-image-container {
+    width: 80%;
+    min-height: 300em;
+    margin: auto;
+
+    background-image: url(Assets/mr_coffee_salle.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
