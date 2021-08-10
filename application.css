@@ -1,29 +1,56 @@
 @font-face {
     font-family: avenirNext;
-    src: url(Fonts/AvenirNextLTPro-Regular.otf);
+    src: url(fonts/AvenirNextLTPro-Regular.otf);
 }
 
-* {
+:root {
+    --background: rgb(106, 123, 139, 95%)
+}
+
+body {
+    background-color: #f1f3f5;
     margin: 0;
     padding: 0;
 }
 
-#full-logo {
-    text-align: center;
+/* Working on nav bar here  */
+
+header {
+    background: var(--background);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
 }
 
-#full-logo img {
-    width: 10%;
-    position: relative;
+header a {
+    display: flex;
+    padding: 1em;
+    margin-left: 4%;
 }
 
-#main-title-image-container {
-    width: 80%;
-    min-height: 300em;
-    margin: auto;
+header nav {
+    margin-right: 4%;
+    flex: 1;
+    max-width: 45%;
+    display: flex;
+}
 
-    background-image: url(Assets/mr_coffee_salle.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+header nav ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
+.nav-item {
+    flex-basis: 30%;
+    list-style-type: none;
+    display: inline-block;
+    max-width: fit-content;
+    white-space: nowrap;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #f1f3f5;
 }
