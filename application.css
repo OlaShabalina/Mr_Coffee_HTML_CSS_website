@@ -5,10 +5,12 @@
 
 :root {
     --background: rgb(106, 123, 139);
-    --textColor: rgb(92, 91, 91)
+    --lightBackground: rgb(241, 243, 245);
+    --textColor: rgb(92, 91, 91);
+    --whiteColor: rgb(255, 255, 255);
 }
 
-body {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
 }
@@ -32,6 +34,7 @@ header nav {
     max-width: fit-content;
     display: flex;
     margin-right: 4%;
+    align-items: center;
 }
 
 header nav ul {
@@ -51,15 +54,16 @@ header nav ul {
 
 .nav-item a {
     text-decoration: none;
-    color: #f1f3f5;
+    color: var(--lightBackground);
 }
 
 /* nav bar is done, will work on the hero section below:  */
 
 main {
-    background-color: #f1f3f5;
+    background-color: var(--lightBackground);
     padding-left: 5%;
     padding-right: 5%;
+    min-height: calc(100vh - 80px - 100px);
 }
 
 .hero {
@@ -90,8 +94,9 @@ main {
     z-index: 999;
     text-align: center;
     text-shadow: 1px 1px 4px var(--background);
-    color: #f1f3f5;
+    color: var(--lightBackground);
     font-size: 2em;
+    text-transform: uppercase;
 }
 
 /* Working on the second section here */
@@ -102,7 +107,7 @@ main {
     align-items: center;
 }
 
-.features-section h2 {
+h2 {
     text-align: center;
     color: var(--textColor);
     padding-top: 1em;
@@ -121,9 +126,8 @@ main {
     width: 30%;
     text-align: center;
     background: #bac2c9;
-    color: #ffffff;
+    color: var(--whiteColor);
     box-shadow: 0px 1px 2px 1.5px rgb(150, 150, 150, 70%);
-    border: #eaeaea;
 }
 
 .card-icon {
@@ -146,27 +150,118 @@ main {
 }
 
 .find-more {
-    background-color: rgb(105, 123, 139);
+    background-color: var(--background);
     width: 13rem;
     height: 3.5rem;
     border-radius: 7px;
     border: none;
     box-shadow: 1px 1px 1px rgb(150, 150, 150, 50%);
-    color: #ffffff;
+    color: var(--whiteColor);
     font-weight: 600;
     font-size: 1.2em;
 }
 
 /* Working on the notes section */
 
+.about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: var(--textColor);
+    padding: 0 10%;
+}
 
+.timetable {
+    display: flex;
+    size: 100%;
+    justify-content: left;
+    align-items: center;
+}
+
+.timetable img {
+    height: 5em;
+    padding: 2em;
+}
+
+.timetable p {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.notes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side-note {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.side-note p {
+    margin: 1em;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.4em;
+}
+
+.bold-text {
+    font-weight: 700;
+}
+
+.announce, .extra-info  {
+    text-align: center;
+    padding-top: 2em;
+}
+
+.announce {
+    font-size: 1.5em;
+}
+
+.extra-info {
+    font-size: 1.7em;
+    padding-bottom: 2.5em;
+}
 
 /* Working on the footer here */
 
-/* footer {
-    position: absolute;
+footer {
     background: var(--background);
     height: 100px;
     width: 100%;
     bottom: 0;
-} */
+    display: grid;
+    grid-template-columns: 5.5% 20em;
+    grid-column-gap: 35%;
+    align-content: center;
+}
+
+.footer-logo {
+    height: 4.5em;
+    margin-left: 4em;
+}
+
+.socials-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--whiteColor);
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 0.5em;
+}
+
+.socials a {
+    display: flex;
+    width: 1.5em;
+}
+
+.socials a img {
+    width: 100%;
+}
