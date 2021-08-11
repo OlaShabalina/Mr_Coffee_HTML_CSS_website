@@ -1,6 +1,15 @@
 @font-face {
-    font-family: avenirNext;
+    font-family: "Avenir Next";
     src: url(fonts/AvenirNextLTPro-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir Next";
+    src: url(fonts/AvenirNextLTPro-Bold.otf);
+    font-weight: bold;
+    font-style: normal;
 }
 
 :root {
@@ -8,6 +17,7 @@
     --lightBackground: rgb(241, 243, 245);
     --textColor: rgb(92, 91, 91);
     --whiteColor: rgb(255, 255, 255);
+    --hoverColor: rgb(219, 70, 70);
 }
 
 *, *::before, *::after {
@@ -15,46 +25,87 @@
     padding: 0;
 }
 
-/* Working on nav bar here  */
+/* Mobile version is added after the full version */
+
+body {
+    font-family: "Avenir Next";
+}
 
 header {
     background: var(--background);
     height: 80px;
     display: flex;
-    justify-content:space-between;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
 }
 
-header a {
-    display: flex;
-    padding: 1em;
+header img {
+    overflow: hidden;
+    height: 70%;
     margin-left: 4%;
 }
 
-header nav {
-    max-width: fit-content;
-    display: flex;
-    margin-right: 4%;
-    align-items: center;
-}
-
-header nav ul {
+nav {
+    position: absolute;
+    text-align: right;
+    top: 100%;
+    background: var(--background);
     width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content:space-evenly;
+    opacity: 90%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
 }
 
-.nav-item {
-    flex-basis: 30%;
-    list-style-type: none;
-    display: inline-block;
-    max-width: fit-content;
-    white-space: nowrap;
+nav ul {
+    margin: 0;
+    padding-right: 4%;
+    list-style: none;
 }
 
-.nav-item a {
-    text-decoration: none;
+nav li {
+    margin-bottom: 0.5em;
+}
+
+nav a {
     color: var(--lightBackground);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: var(--hoverColor);
+    font-weight: bold;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+.nav-toggle-label {
+    padding: 1em;
+    margin-right: 4%;
+    color: var(--lightBackground);
+    border: 1px solid var(--lightBackground);
+    border-radius: 10px;
+}
+
+.nav-toggle-label:hover {
+    background-color: var(--hoverColor);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
 }
 
 /* nav bar is done, will work on the hero section below:  */
@@ -67,6 +118,7 @@ main {
 }
 
 .hero {
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,7 +165,7 @@ h2 {
     padding-top: 1em;
     padding-bottom: 1em;
     font-size: 2em;
-    font-family: avenirNext;
+    font-family: "Avenir Next";
 }
 
 .cards {
@@ -138,15 +190,13 @@ h2 {
 
 .feature-title {
     font-size: 25px;
-    font-weight: 700;
+    font-weight: bold;
     text-shadow: 1px 2px 3px rgb(150, 150, 150);
 }
 
 .feature-description {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 10%;
-    font-weight: 600;
+    padding: 10%;
+    font-weight: normal;
 }
 
 .find-more {
@@ -157,7 +207,7 @@ h2 {
     border: none;
     box-shadow: 1px 1px 1px rgb(150, 150, 150, 50%);
     color: var(--whiteColor);
-    font-weight: 600;
+    font-weight: normal;
     font-size: 1.2em;
 }
 
@@ -184,30 +234,30 @@ h2 {
 }
 
 .timetable p {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 1.5em;
 }
 
 .notes {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .side-note {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 100%;
 }
 
 .side-note p {
     margin: 1em;
     text-align: center;
-    font-weight: 500;
-    font-size: 1.4em;
+    font-weight: normal;
+    font-size: 1.2em;
 }
 
-.bold-text {
-    font-weight: 700;
+.side-note p:nth-of-type(2), .bold-text {
+    font-weight: bold;
 }
 
 .announce, .extra-info  {
@@ -216,7 +266,7 @@ h2 {
 }
 
 .announce {
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 .extra-info {
@@ -233,7 +283,7 @@ footer {
     bottom: 0;
     display: grid;
     grid-template-columns: 5.5% 20em;
-    grid-column-gap: 35%;
+    grid-column-gap: 30%;
     align-content: center;
 }
 
@@ -264,4 +314,255 @@ footer {
 
 .socials a img {
     width: 100%;
+}
+
+@media screen and (min-width: 650px) {
+    /* returning to original full version */
+    .nav-toggle-label {
+        display: none;
+    }
+
+    nav, nav a {
+        opacity: 1;
+    }
+
+    /* Working on nav bar here  */
+
+    header {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav {
+        all:unset;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 4%;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav li {
+        margin-left: 2em;
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+
+    nav a {
+        all: unset;
+        color: var(--lightBackground);
+    }
+
+    /* nav bar is done, will work on the hero section below:  */
+
+    main {
+        background-color: var(--lightBackground);
+        padding-left: 5%;
+        padding-right: 5%;
+        min-height: calc(100vh - 80px - 100px);
+    }
+
+    .hero {
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .big-logo-image {
+        position: relative;
+        width: 17%;
+        min-width: 10em;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 100%;
+    }
+
+    .hero-image h1 {
+        position: absolute;
+        width: 80%; /* so it moves to the next line and doesn't overlap the image */
+        margin-top: 10%;
+        z-index: 999;
+        text-align: center;
+        text-shadow: 1px 1px 4px var(--background);
+        color: var(--lightBackground);
+        font-size: 2em;
+        text-transform: uppercase;
+    }
+
+    /* Working on the second section here */
+
+    .features-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2 {
+        text-align: center;
+        color: var(--textColor);
+        padding-top: 1em;
+        padding-bottom: 1em;
+        font-size: 2em;
+        font-family: "Avenir Next";
+    }
+
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 4rem;
+    }
+
+    .card {
+        width: 30%;
+        text-align: center;
+        background: #bac2c9;
+        color: var(--whiteColor);
+        box-shadow: 0px 1px 2px 1.5px rgb(150, 150, 150, 70%);
+    }
+
+    .card-icon {
+        width: 120px;
+        align-items: center;
+        padding-top: 3em;
+    }
+
+    .feature-title {
+        font-size: 25px;
+        font-weight: bold;
+        text-shadow: 1px 2px 3px rgb(150, 150, 150);
+    }
+
+    .feature-description {
+        padding: 10%;
+        font-weight: normal;
+    }
+
+    .find-more {
+        background-color: var(--background);
+        width: 13rem;
+        height: 3.5rem;
+        border-radius: 7px;
+        border: none;
+        box-shadow: 1px 1px 1px rgb(150, 150, 150, 50%);
+        color: var(--whiteColor);
+        font-weight: normal;
+        font-size: 1.2em;
+    }
+
+    /* Working on the notes section */
+
+    .about-us {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: var(--textColor);
+        padding: 0 10%;
+    }
+
+    .timetable {
+        display: flex;
+        size: 100%;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .timetable img {
+        height: 5em;
+        padding: 2em;
+    }
+
+    .timetable p {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .notes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .side-note {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .side-note p {
+        margin: 1em;
+        text-align: center;
+        font-weight: normal;
+        font-size: 1.2em;
+    }
+
+    .side-note p:nth-of-type(2), .bold-text {
+        font-weight: bold;
+    }
+
+    .announce, .extra-info  {
+        text-align: center;
+        padding-top: 2em;
+    }
+
+    .announce {
+        font-size: 1.4em;
+    }
+
+    .extra-info {
+        font-size: 1.7em;
+        padding-bottom: 2.5em;
+    }
+
+    /* Working on the footer here */
+
+    footer {
+        background: var(--background);
+        height: 100px;
+        width: 100%;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: 5.5% 20em;
+        grid-column-gap: 30%;
+        align-content: center;
+    }
+
+    .footer-logo {
+        height: 4.5em;
+        margin-left: 4em;
+    }
+
+    .socials-table {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--whiteColor);
+    }
+
+    .socials {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        padding: 0.5em;
+    }
+
+    .socials a {
+        display: flex;
+        width: 1.5em;
+    }
+
+    .socials a img {
+        width: 100%;
+    }
 }
