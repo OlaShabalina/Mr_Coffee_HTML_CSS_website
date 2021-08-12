@@ -49,6 +49,7 @@ header {
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000;
 }
 
 .nav-bar img {
@@ -119,10 +120,9 @@ nav a:hover {
 
 .big-logo-image {
     margin-top: 80px;
-    position: relative;
-
-    width: 17%;
-    min-width: 10em;
+    width: 16%;
+    min-width: 8em;
+    max-width: 13em;
 }
 
 /* nav bar is done, will work on the hero section below:  */
@@ -136,7 +136,6 @@ main {
 .hero {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -148,12 +147,12 @@ main {
     position: absolute;
     width: 80%; /* so it moves to the next line and doesn't overlap the image */
     margin-top: 10%;
-    z-index: 999;
     text-align: center;
     text-shadow: 1px 1px 4px var(--background);
     color: var(--lightBackground);
     font-size: 2em;
     text-transform: uppercase;
+    z-index: 0;
 }
 
 /* Working on the second section here */
@@ -359,6 +358,35 @@ footer {
     font-size: 1.5em;
 }
 
+/* "contact us" page styles except for header and footer*/
+
+.contact-us-main-section {
+    display: flexbox;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-us-page-title {
+    font-size: 1.6em;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.contact-details {
+    width: max-content;
+    margin: auto;
+}
+
+.contact-details p {
+    padding: 1em;
+}
+
+.map {
+    padding-top: 3em;
+    margin-bottom: 6em;
+}
 
 @media screen and (min-width: 650px) {
     /* returning to original full version */
@@ -522,5 +550,13 @@ footer {
     .info-block-title {
         margin-top: 1em;
         font-size: 2em;
+    }
+
+    /* contact us page changes */
+
+    .contact-us-page-title {
+        font-size: 2em;
+        text-align: center;
+        padding-bottom: 1.7em;
     }
 }
