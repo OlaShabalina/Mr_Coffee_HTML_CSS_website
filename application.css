@@ -12,6 +12,8 @@
     font-style: normal;
 }
 
+/* colors I'll be using in this project */
+
 :root {
     --background: rgb(106, 123, 139);
     --lightBackground: rgb(241, 243, 245);
@@ -25,9 +27,9 @@
     padding: 0;
 }
 
-/* Mobile version is created after the full version */
+/* p.s. Mobile version is created after the full version but I decided to put it first */
 
-/* Working on header and footer + index page */
+/* Working on header and footer in the index page */
 
 body {
     font-family: "Avenir Next";
@@ -40,6 +42,8 @@ header {
     flex-direction: column;
     align-items: center;
 }
+
+/* Mobile version nav bar will be set up here including menu button (checkbox) */
 
 .nav-bar {
     background: var(--background);
@@ -91,6 +95,7 @@ nav a {
 
 nav a:hover {
     color: var(--hoverColor);
+    cursor: pointer;
 }
 
 .nav-toggle {
@@ -111,6 +116,7 @@ nav a:hover {
 
 .nav-toggle-label:hover {
     background-color: var(--hoverColor);
+    cursor: pointer;
 }
 
 .nav-toggle:checked ~ nav a {
@@ -118,11 +124,13 @@ nav a:hover {
     transition: opacity 250ms ease-in-out 250ms;
 }
 
+/* Adding mr coffee big logo to the middle of the page and as a part of header */
+
 .big-logo-image {
     margin-top: 80px;
     width: 16%;
-    min-width: 8em;
-    max-width: 13em;
+    min-width: 8rem;
+    max-width: 13rem;
 }
 
 /* nav bar is done, will work on the hero section below:  */
@@ -150,25 +158,26 @@ main {
     text-align: center;
     text-shadow: 1px 1px 4px var(--background);
     color: var(--lightBackground);
-    font-size: 2em;
+    font-size: 2rem;
     text-transform: uppercase;
     z-index: 0;
 }
 
-/* Working on the second section here */
+/* Working on the second section here (cards with features) */
 
 .features-section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 h2 {
     text-align: center;
     color: var(--textColor);
-    padding-top: 2em;
-    padding-bottom: 2em;
-    font-size: 1.3em;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.3rem;
     font-family: "Avenir Next";
 }
 
@@ -192,7 +201,7 @@ h2 {
 .card-icon {
     width: 120px;
     align-items: center;
-    padding-top: 3em;
+    padding-top: 3rem;
 }
 
 .feature-title {
@@ -203,8 +212,10 @@ h2 {
 
 .feature-description {
     padding: 10%;
-    font-weight: normal;
+    font-weight: bold;
 }
+
+/* button "find ut more" */
 
 .find-more {
     background-color: var(--background);
@@ -215,7 +226,12 @@ h2 {
     box-shadow: 1px 1px 1px rgb(150, 150, 150, 50%);
     color: var(--whiteColor);
     font-weight: normal;
-    font-size: 1.2em;
+    font-size: 1.2rem;
+}
+
+.find-more:hover {
+    cursor: pointer;
+    background-color: var(--hoverColor);
 }
 
 /* Working on the notes section */
@@ -237,13 +253,13 @@ h2 {
 }
 
 .timetable img {
-    height: 5em;
-    padding: 2em;
+    height: 5rem;
+    padding: 2rem;
 }
 
 .timetable p {
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     text-align: center;
 }
 
@@ -259,10 +275,10 @@ h2 {
 }
 
 .side-note p {
-    margin: 1em;
+    margin: 1rem;
     text-align: center;
     font-weight: normal;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .side-note p:nth-of-type(2), .bold-text {
@@ -271,16 +287,16 @@ h2 {
 
 .announce, .extra-info  {
     text-align: center;
-    padding-top: 2em;
+    padding-top: 2rem;
 }
 
 .announce {
-    font-size: 1.4em;
+    font-size: 1.4rem;
 }
 
 .extra-info {
-    font-size: 1.7em;
-    padding-bottom: 2.5em;
+    font-size: 1.7rem;
+    padding-bottom: 2.5rem;
 }
 
 /* Working on the footer here */
@@ -291,14 +307,14 @@ footer {
     width: 100%;
     bottom: 0;
     display: grid;
-    grid-template-columns: 1fr auto min-content 0.5fr;
+    grid-template-columns: 1fr auto max-content 0.5fr;
     grid-column-gap: 10%;
     align-content: center;
 }
 
 .footer-logo {
-    height: 4.5em;
-    margin-left: 1em;
+    height: 4.5rem;
+    margin-left: 1rem;
 }
 
 .socials-table {
@@ -317,12 +333,12 @@ footer {
     display: flex;
     justify-content: space-between;
     width: 50%;
-    padding: 0.5em;
+    padding: 0.5rem;
 }
 
 .socials a {
     display: flex;
-    width: 1.5em;
+    width: 1.5rem;
 }
 
 .socials a img {
@@ -336,9 +352,9 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2em;
+    padding: 2rem;
     padding-top: 0;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
 .info-block-bottom {
@@ -347,15 +363,15 @@ footer {
 
 .info-block-top img, .info-block-bottom img {
     width: 100%;
-    padding-top: 3em;
+    padding-top: 3rem;
 }
 
 .info-block-text {
-    padding-top: 2em;
+    padding-top: 2rem;
 }
 
 .info-block-title {
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 /* "contact us" page styles except for header and footer*/
@@ -369,9 +385,9 @@ footer {
 }
 
 .contact-us-page-title {
-    font-size: 1.6em;
+    font-size: 1.6rem;
     text-align: center;
-    padding-bottom: 1em;
+    padding-bottom: 1rem;
 }
 
 .contact-details {
@@ -380,12 +396,13 @@ footer {
 }
 
 .contact-details p {
-    padding: 1em;
+    padding: 1rem;
 }
 
 .map {
-    padding-top: 3em;
-    margin-bottom: 6em;
+    padding-top: 3rem;
+    margin-bottom: 6rem;
+    border: 2px solid black;
 }
 
 @media screen and (min-width: 650px) {
@@ -423,7 +440,7 @@ footer {
     nav li {
         margin-bottom: 0;
         white-space: nowrap;
-        padding-left: 2em;
+        padding-left: 2rem;
     }
 
     nav a {
@@ -435,7 +452,7 @@ footer {
         all: unset;
         display: flex;
         justify-content: space-between;
-        padding-bottom: 2em;
+        padding-bottom: 2rem;
     }
 
     .card {
@@ -444,8 +461,8 @@ footer {
     }
 
     h2 {
-        font-size: 2em;
-        padding: 2em;
+        font-size: 2rem;
+        padding: 2rem;
     }
 
     /* Working on the notes section */
@@ -468,13 +485,13 @@ footer {
     }
 
     .timetable img {
-        height: 5em;
-        padding: 2em;
+        height: 5rem;
+        padding: 2rem;
     }
 
     .timetable p {
         font-weight: bold;
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
 
     .notes {
@@ -486,14 +503,14 @@ footer {
     /* Working on the footer here */
 
     footer {
-        grid-template-columns: 5.5% 20em;
+        grid-template-columns: 5.5% 20rem;
         grid-column-gap: 35%;
         align-content: center;
     }
 
     .footer-logo {
-        height: 4.5em;
-        margin-left: 4em;
+        height: 4.5rem;
+        margin-left: 4rem;
     }
 
     .socials-table {
@@ -508,13 +525,13 @@ footer {
         display: flex;
         justify-content: space-between;
         width: 50%;
-        padding: 0.5em;
+        padding: 0.5rem;
     }
 
     /* "about" page styles except for header and footer*/
 
     .about-page-main-section {
-        padding-bottom: 2em;
+        padding-bottom: 2rem;
     }
 
     .info-block-top, .info-block-bottom {
@@ -523,7 +540,7 @@ footer {
         justify-content: space-between;
         align-items: flex-start;
         padding-top: 0;
-        padding-bottom: 3em; 
+        padding-bottom: 3rem; 
     }
 
     .info-block-top {
@@ -544,19 +561,19 @@ footer {
     }
 
     .info-block-text {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
     .info-block-title {
-        margin-top: 1em;
-        font-size: 2em;
+        margin-top: 1rem;
+        font-size: 2rem;
     }
 
     /* contact us page changes */
 
     .contact-us-page-title {
-        font-size: 2em;
+        font-size: 2rem;
         text-align: center;
-        padding-bottom: 1.7em;
+        padding-bottom: 1.7rem;
     }
 }
