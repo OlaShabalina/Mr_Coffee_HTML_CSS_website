@@ -377,7 +377,7 @@ footer {
 /* "contact us" page styles except for header and footer*/
 
 .contact-us-main-section {
-    display: flexbox;
+    display: flex;
     flex-direction: column;
     overflow: hidden;
     justify-content: space-between;
@@ -386,7 +386,6 @@ footer {
 
 .contact-us-page-title {
     font-size: 1.6rem;
-    text-align: center;
     padding-bottom: 1rem;
 }
 
