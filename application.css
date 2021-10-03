@@ -306,16 +306,21 @@ footer {
     height: 100px;
     width: 100%;
     bottom: 0;
-    display: grid;
-    grid-template-columns: 1fr auto max-content 0.5fr;
-    grid-column-gap: 10%;
-    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo-container {
+    position: absolute;
+    height: 4.5rem;
 }
 
 .footer-logo {
-    height: 4.5rem;
-    margin-left: 1rem;
+    display: none;
 }
+
+
 
 .socials-table {
     display: flex;
@@ -401,7 +406,6 @@ footer {
 .map {
     padding-top: 3rem;
     margin-bottom: 6rem;
-    border: 2px solid black;
 }
 
 @media screen and (min-width: 650px) {
@@ -502,14 +506,24 @@ footer {
     /* Working on the footer here */
 
     footer {
-        grid-template-columns: 5.5% 20rem;
-        grid-column-gap: 35%;
-        align-content: center;
+        background: var(--background);
+        height: 100px;
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .footer-logo-container {
+        margin-right: 90%;
+        position: absolute;
+        height: 4.5rem;
     }
 
     .footer-logo {
-        height: 4.5rem;
-        margin-left: 4rem;
+        display: block;
+        height: 100%;
     }
 
     .socials-table {
